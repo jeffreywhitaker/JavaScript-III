@@ -30,8 +30,24 @@ let HelloObject = {
 // Principle 3
 // code example for New Binding
 
-
+function CordialPerson(greeter) {
+    this.greeting = 'Hello ';
+    this.greeter = greeter;
+    this.speak = function() {
+      console.log(this.greeting + this.greeter);
+      console.log(this);
+    };
+  }
+  
+  const jerry = new CordialPerson('Newman');
+  const newman = new CordialPerson('Jerry');
+  
+  jerry.speak();
+  newman.speak();
 
 
 // Principle 4
 // code example for Explicit Binding
+
+// GameObject.call(this, attributes);
+// see next page - the .call() is an explicit binding I built to solve the prototype problem.
